@@ -2,6 +2,7 @@ package com.matiasnetto.anotadordetruco.Services;
 
 import com.matiasnetto.anotadordetruco.Dao.MatchDao;
 import com.matiasnetto.anotadordetruco.Models.MatchModel;
+import com.matiasnetto.anotadordetruco.Dto.ScoresDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -49,9 +50,9 @@ public class TrucoMatchService {
                 .build();
     }
 
-    public void updateScores(String roomId, int teamAScore, int teamBScore) {
-        matchDao.setTeamAScore(roomId, teamAScore);
-        matchDao.setTeamBScore(roomId, teamBScore);
+    public void updateScores(String roomId, ScoresDTO scores) {
+        matchDao.setTeamAScore(roomId, scores.teamAScore);
+        matchDao.setTeamBScore(roomId, scores.teamBScore);
     }
 
     public void  addTeamAPlayer(String roomId, String playerName) {
@@ -78,6 +79,12 @@ public class TrucoMatchService {
 
     public List<String> getTeamBPlayers(String roomId) {
         return matchDao.getTeamBPlayers(roomId);
+    }
+
+    public ScoresDTO getScores(String roomId) {
+       var teamAScore = matchDao.getTeamAScore(roomId);
+       var teamBScore =  matchDao.getTeamBScore(roomId);
+       return  new ScoresDTO(teamAScore, teamBScore);
     }
 
 }

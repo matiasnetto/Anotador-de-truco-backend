@@ -1,7 +1,7 @@
 package com.matiasnetto.anotadordetruco.Controllers;
 
-import com.matiasnetto.anotadordetruco.Dto.Requests.CreateNewMatchDTORequest;
-import com.matiasnetto.anotadordetruco.Dto.Responses.CreateNewMatchDTOResponse;
+import com.matiasnetto.anotadordetruco.Dto.CreateNewMatchDTORequest;
+import com.matiasnetto.anotadordetruco.Dto.CreateNewMatchDTOResponse;
 import com.matiasnetto.anotadordetruco.Models.MatchModel;
 import com.matiasnetto.anotadordetruco.Services.TrucoMatchService;
 import org.springframework.beans.factory.annotation.Autowired;

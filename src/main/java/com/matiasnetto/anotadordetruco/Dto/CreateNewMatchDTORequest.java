@@ -1,4 +1,4 @@
-package com.matiasnetto.anotadordetruco.Dto.Requests;
+package com.matiasnetto.anotadordetruco.Dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
